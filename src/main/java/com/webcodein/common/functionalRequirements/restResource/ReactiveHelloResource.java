@@ -23,4 +23,24 @@ public class ReactiveHelloResource {
         return future;
     }
 
+
+    @Path("delayed/{name}")
+    @GET
+    public CompletionStage<String> delayedHello(@PathParam("name") String name) {
+        System.out.println("Delayed ReactiveHello webservice checked for name : "+name);
+
+        CompletableFuture<String> future = new CompletableFuture<>();
+
+        new Thread(()->{
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                future.completeExceptionally(e);
+                return;
+            }
+            future.complete("Delayed Reactive Hello "+name+"!");
+
+        }).start();
+        return future;
+    }
 }
