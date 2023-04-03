@@ -1,6 +1,6 @@
 package com.webcodein.common.nonFunctionalRequirements.RESTfulWebServiceConfig;
 
-import com.webcodein.common.nonFunctionalRequirements.RESTfulWebServiceConfig.exceptionHandlers.WebServiceExceptionHandler;
+import com.webcodein.common.nonFunctionalRequirements.exceptionHandlers.WebServiceExceptionHandler;
 import jakarta.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
@@ -31,7 +31,7 @@ public class CommonJerseyServerConfiguration extends ResourceConfig {
         register(WebServiceExceptionHandler.class);
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
 
-        packages("dz.eadn.pemp.presentation.api_v1.common");
+        packages("com.webcodein.common.functionalRequirements.restResource");
 
     }
 

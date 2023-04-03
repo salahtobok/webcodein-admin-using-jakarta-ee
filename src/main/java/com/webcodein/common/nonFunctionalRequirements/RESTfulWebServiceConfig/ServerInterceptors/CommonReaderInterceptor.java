@@ -1,15 +1,14 @@
 package com.webcodein.common.nonFunctionalRequirements.RESTfulWebServiceConfig.ServerInterceptors;
 
-import dz.eadn.common.business.LazyFilterModel;
-import dz.eadn.common.controller.JsfUtil;
+import com.webcodein.common.nonFunctionalRequirements.utils.GeneralUtil;
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbBuilder;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.Provider;
+import jakarta.ws.rs.ext.ReaderInterceptor;
+import jakarta.ws.rs.ext.ReaderInterceptorContext;
 
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.Provider;
-import javax.ws.rs.ext.ReaderInterceptor;
-import javax.ws.rs.ext.ReaderInterceptorContext;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,11 +30,10 @@ public class CommonReaderInterceptor implements ReaderInterceptor {
             // Check if the body is going to deserialize or not to LazyFilterModel object
             // If not redirect to WebApplicationException with Bad Request response
             Jsonb jsonb = JsonbBuilder.create();
-            LazyFilterModel lazyFilterModel = jsonb.fromJson(body, LazyFilterModel.class);
             return context.proceed();
         } catch (Exception exception) {
             Logger.getLogger(this.getClass().getSimpleName()).log(Level.SEVERE, () -> "Log Cause Message ===> : "+exception.getMessage());
-            JsfUtil.logRootCauseMessage(exception,context.getClass());
+            GeneralUtil.logRootCauseMessage(exception,context.getClass());
             throw new WebApplicationException(Response.status(400).build());
         }
     }

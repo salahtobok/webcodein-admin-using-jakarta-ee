@@ -1,7 +1,10 @@
 package com.webcodein.common.nonFunctionalRequirements.RESTfulWebServiceConfig.ServerInterceptors;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.ext.*;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.ext.Provider;
+import jakarta.ws.rs.ext.WriterInterceptor;
+import jakarta.ws.rs.ext.WriterInterceptorContext;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
