@@ -14,7 +14,7 @@ public class HelloResource {
     public String hello(@PathParam("name") String name) {
         System.out.println("Hello webservice checked for name : "+name);
         try {
-            Thread.sleep(60000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
