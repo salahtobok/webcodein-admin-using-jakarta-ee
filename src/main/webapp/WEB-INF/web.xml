@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <!-- Session configuration -->
+    <session-config>
+        <session-timeout>5</session-timeout>
+
+        <cookie-config>
+            <http-only>true</http-only>
+            <max-age>-1</max-age> <!-- 20 minutes the measure unit is seconds -->
+        </cookie-config>
+        <!--        <cookie-config>-->
+        <!--            <http-only>true</http-only>-->
+        <!--            <max-age>-1</max-age> &lt;!&ndash; 20 minutes the measure unit is seconds &ndash;&gt;-->
+        <!--        </cookie-config>-->
+        <!--        <tracking-mode>COOKIE</tracking-mode> &lt;!&ndash; This disables URL rewriting. &ndash;&gt;-->
+    </session-config>
+    <!-- XML is still typical for third party framework configuration -->
+
+</web-app>
