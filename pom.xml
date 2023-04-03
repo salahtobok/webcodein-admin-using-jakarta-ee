@@ -9,22 +9,14 @@
     <packaging>war</packaging>
     <name>webcodein_admin</name>
     <url></url>
-    <!--Maven définit quatre portées pour les dépendances :
-
-    compile : la dépendance est utilisable par toutes les phases et à  l'exécution. C'est le scope par défaut
-    provided : la dépendance est utilisée pour la compilation mais elle ne sera pas déployée car elle est considérée comme étant fournie par l'environnement d'exécution. C'est par exemple le cas des API fournies par un serveur d'applications
-    runtime : la dépendance n'est pas utile pour la compilation mais elle est nécessaire à l'exécution. C'est par exemple le cas des pilotes JDBC
-    test : la dépendance n'est utilisée que lors de la compilation et de l'exécution des tests. C'est par exemple le cas pour la bibliothèque utilisée pour les tests unitaires (JUnit ou TestNG pas exemple) ou pour les doublures (Easymock, Mockito, ...)-->
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
-        <version.maven-clean-plugin>3.1.0</version.maven-clean-plugin>
-        <version.git-commit-id-plugin>2.2.5</version.git-commit-id-plugin>
 
-        <microprofile.version>4.1</microprofile.version>
+        <microprofile.version>6.0</microprofile.version>
 
     </properties>
 
@@ -40,11 +32,10 @@
             <scope>provided</scope>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.jpa -->
+        <!-- https://mvnrepository.com/artifact/jakarta.faces/jakarta.faces-api -->
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>org.eclipse.persistence.jpa</artifactId>
+            <groupId>jakarta.faces</groupId>
+            <artifactId>jakarta.faces-api</artifactId>
             <version>4.0.1</version>
         </dependency>
 
