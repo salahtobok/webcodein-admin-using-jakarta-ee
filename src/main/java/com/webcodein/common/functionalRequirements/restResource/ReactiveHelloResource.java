@@ -33,7 +33,8 @@ public class ReactiveHelloResource {
 
         new Thread(()->{
             try {
-                Thread.sleep(1000);
+                // 20 Seconds
+                Thread.sleep(20000);
             } catch (InterruptedException e) {
                 future.completeExceptionally(e);
                 return;
