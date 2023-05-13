@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.webcodein</groupId>
-    <artifactId>webcodein_admin</artifactId>
+    <artifactId>webcodein-admin-using-jakarta-ee</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
-    <name>webcodein_admin</name>
+    <name>webcodein-admin-using-jakarta-ee</name>
     <url></url>
 
     <properties>
@@ -92,7 +92,7 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <finalName>webcodein_admin</finalName>
+        <finalName>webcodein-admin-using-jakarta-ee</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
